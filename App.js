@@ -8,7 +8,7 @@
  */
 
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity,TouchableHighlight, TextInput, StyleSheet,Image} from 'react-native';
+import {View, Text, TouchableOpacity, TextInput, StyleSheet,Image} from 'react-native';
 import Hr from './hr.dist';
 import RadioForm from 'react-native-simple-radio-button';
  
@@ -66,12 +66,12 @@ export default class App extends Component {
               />
             </View>
             <View>
-              <TouchableHighlight style = {styles.submitButton}
+              <TouchableOpacity style = {styles.submitButton}
                onPress = {
                   () => this.login(this.state.email, this.state.password)
                }>
                <Text style = {styles.submitButtonText}> LOG IN </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <Hr text="OR"
             textStyle={{
@@ -80,12 +80,14 @@ export default class App extends Component {
            }}
             />
           <View>
-              <TouchableHighlight style = {{backgroundColor: '#4267b2',padding: 15,margin: 15,height: 50}}>
-               <Text style = {styles.submitButtonText}> LOGIN WITH FACEBOOK </Text>
-              </TouchableHighlight>
-              <TouchableHighlight style = {{backgroundColor: '#1da1f2',padding: 15,marginLeft:15,marginRight:15,height: 50}}>
-               <Text style = {styles.submitButtonText}> LOGIN WITH TWITTER </Text>
-              </TouchableHighlight>
+            <TouchableOpacity style={styles.FacebookStyle} activeOpacity={0.5}>
+               <Image source={require('./img/facebook.jpg')} style={styles.ImageIconStyle} />
+               <Text style={styles.submitButtonText}> LOGIN WITH FACEBOOK </Text>
+               </TouchableOpacity>
+            <TouchableOpacity style={styles.TwitterStyle} activeOpacity={0.5}>
+               <Image source={require('./img/twitter.png')} style={styles.ImageIconStyle} />
+               <Text style={styles.submitButtonText}> LOGIN WITH TWITTER </Text>
+               </TouchableOpacity>
             </View>
         </View>
     );
@@ -113,5 +115,37 @@ const styles = StyleSheet.create({
       color: 'white',
       fontSize: 15,
       fontWeight: 'bold',
-      textAlign: 'center'
-   }});
+      textAlign: 'center',
+      marginLeft:15
+   },
+   FacebookStyle: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#485a96',
+      borderWidth: .5,
+      borderColor: '#fff',
+      height: 50,
+      borderRadius: 5 ,
+      padding: 15,
+      margin:15
+    },
+    TwitterStyle: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#1da1f2',
+      borderWidth: .5,
+      borderColor: '#fff',
+      height: 50,
+      borderRadius: 5 ,
+      padding: 15,
+      marginLeft:15,
+      marginRight:15
+    },      
+    ImageIconStyle: {
+       padding: 10,
+       margin: 15,
+       height: 25,
+       width: 25,
+       resizeMode : 'stretch',
+    },
+});
