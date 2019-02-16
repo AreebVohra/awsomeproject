@@ -42,11 +42,11 @@ export default class App extends Component {
       <View style={{marginBottom:60}}>
       <Container>
         <Header style={{backgroundColor:'#77D353'}}>
-          <Left/>
+          <Left><Button transparent><Icon name='menu' /></Button></Left>
           <Body>
             <Title>Auth Panel</Title>
           </Body>
-          <Right><Button transparent><Icon name='menu' /></Button></Right>
+          <Right></Right>
         </Header>
       </Container>
       </View>
