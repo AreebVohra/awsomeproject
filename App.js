@@ -80,11 +80,11 @@ export default class App extends Component {
            }}
             />
           <View>
-            <TouchableOpacity style={styles.FacebookStyle} activeOpacity={0.5}>
+            <TouchableOpacity style={[styles.touchableStyle,{ backgroundColor: '#485a96'}]} activeOpacity={0.5}>
                <Image source={require('./img/facebook.jpg')} style={styles.ImageIconStyle} />
                <Text style={styles.submitButtonText}> LOGIN WITH FACEBOOK </Text>
                </TouchableOpacity>
-            <TouchableOpacity style={styles.TwitterStyle} activeOpacity={0.5}>
+            <TouchableOpacity style={[styles.touchableStyle,{ backgroundColor: '#1da1f2'}]} activeOpacity={0.5}>
                <Image source={require('./img/twitter.png')} style={styles.ImageIconStyle} />
                <Text style={styles.submitButtonText}> LOGIN WITH TWITTER </Text>
                </TouchableOpacity>
@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
       padding: 15,
       margin: 15,
       height: 50,
+      borderRadius: 5 ,
    },
    submitButtonText:{
       color: 'white',
@@ -118,29 +119,14 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       marginLeft:15
    },
-   FacebookStyle: {
+   touchableStyle: {
       flexDirection: 'row',
       alignItems: 'center',
-      backgroundColor: '#485a96',
-      borderWidth: .5,
-      borderColor: '#fff',
       height: 50,
-      borderRadius: 5 ,
+      borderRadius: 5,
       padding: 15,
       margin:15
-    },
-    TwitterStyle: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: '#1da1f2',
-      borderWidth: .5,
-      borderColor: '#fff',
-      height: 50,
-      borderRadius: 5 ,
-      padding: 15,
-      marginLeft:15,
-      marginRight:15
-    },      
+    },     
     ImageIconStyle: {
        padding: 10,
        margin: 15,
