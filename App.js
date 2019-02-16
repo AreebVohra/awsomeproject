@@ -20,22 +20,6 @@ var radio_props = [
 ];
 
 export default class App extends Component {
-   static navigationOptions = {
-      title: 'Home',
-    };
-  state = {
-    email: '',
-    password: ''
-   }
-   handleEmail = (text) => {
-    this.setState({ email: text })
-   }
-   handlePassword = (text) => {
-    this.setState({ password: text })
-   }
-   login = (email, pass) => {
-    alert('email: ' + email + ' password: ' + pass)
-   }
   render() {
     return (
       <View style = {styles.container}>
@@ -73,18 +57,15 @@ export default class App extends Component {
                 initial={-1}
                 onPress={(value) => {}}
                 buttonOuterSize={25}
-                buttonColor={'#50C900'}
-                selectedButtonColor={'#50C900'}
+                buttonColor={'#77D353'}
+                selectedButtonColor={'#77D353'}
                 formHorizontal={true}
                 labelHorizontal={false}
                 style={styles.radio}
               />
             </View>
             <View>
-              <TouchableOpacity style = {styles.submitButton}
-               onPress = {
-                  () => this.login(this.state.email, this.state.password)
-               }>
+              <TouchableOpacity style = {styles.submitButton}>
                <Text style = {styles.submitButtonText}> LOG IN </Text>
               </TouchableOpacity>
             </View>
