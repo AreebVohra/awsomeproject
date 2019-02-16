@@ -11,6 +11,7 @@ import React, {Component} from 'react';
 import {View, Text, TouchableOpacity, TextInput, StyleSheet,Image} from 'react-native';
 import Hr from './hr.dist';
 import RadioForm from 'react-native-simple-radio-button';
+import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
  
 var radio_props = [
   {label: 'Citizen', value: 0 },
@@ -19,23 +20,37 @@ var radio_props = [
 ];
 
 export default class App extends Component {
-  state = {
+   static navigationOptions = {
+      title: 'Home',
+    };
+ /* state = {
     email: '',
     password: ''
- }
- handleEmail = (text) => {
+   }
+   handleEmail = (text) => {
     this.setState({ email: text })
- }
- handlePassword = (text) => {
+   }
+   handlePassword = (text) => {
     this.setState({ password: text })
- }
- login = (email, pass) => {
+   }
+   login = (email, pass) => {
     alert('email: ' + email + ' password: ' + pass)
- }
+   }*/
   render() {
     return (
       <View style = {styles.container}>
-        <View>
+      <View style={{marginBottom:60}}>
+      <Container>
+        <Header style={{backgroundColor:'#77D353'}}>
+          <Left/>
+          <Body>
+            <Title>Auth Panel</Title>
+          </Body>
+          <Right><Button transparent><Icon name='menu' /></Button></Right>
+        </Header>
+      </Container>
+      </View>
+      <View >
             <TextInput style = {styles.input}
                underlineColorAndroid = "lightgray"
                placeholder = "Username or Email"
@@ -52,7 +67,7 @@ export default class App extends Component {
                onChangeText = {this.handlePassword}/>
           </View>
 
-          <View style={{ marginVertical: 20, marginHorizontal:80 }}>
+          <View style={{marginHorizontal:80, marginVertical:20 }}>
              <RadioForm
                 radio_props={radio_props}
                 initial={-1}
@@ -79,8 +94,8 @@ export default class App extends Component {
               margin:4
            }}
             />
-          <View>
-            <TouchableOpacity style={[styles.touchableStyle,{ backgroundColor: '#485a96'}]} activeOpacity={0.5}>
+          <View style={{margin:15}}>
+            <TouchableOpacity style={[styles.touchableStyle,{ backgroundColor: '#485a96',marginBottom:20}]} activeOpacity={0.5}>
                <Image source={require('./img/facebook.jpg')} style={styles.ImageIconStyle} />
                <Text style={styles.submitButtonText}> LOGIN WITH FACEBOOK </Text>
                </TouchableOpacity>
@@ -96,6 +111,7 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
+     flex:1
   },
   radio:{
     alignContent:'center'
@@ -125,7 +141,6 @@ const styles = StyleSheet.create({
       height: 50,
       borderRadius: 5,
       padding: 15,
-      margin:15
     },     
     ImageIconStyle: {
        padding: 10,
