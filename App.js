@@ -23,7 +23,7 @@ export default class App extends Component {
    static navigationOptions = {
       title: 'Home',
     };
- /* state = {
+  state = {
     email: '',
     password: ''
    }
@@ -35,7 +35,7 @@ export default class App extends Component {
    }
    login = (email, pass) => {
     alert('email: ' + email + ' password: ' + pass)
-   }*/
+   }
   render() {
     return (
       <View style = {styles.container}>
