@@ -86,9 +86,6 @@ export default class App extends Component {
               <TouchableHighlight style = {{backgroundColor: '#1da1f2',padding: 15,marginLeft:15,marginRight:15,height: 50}}>
                <Text style = {styles.submitButtonText}> LOGIN WITH TWITTER </Text>
               </TouchableHighlight>
-              <TouchableHighlight style = {{backgroundColor: '#1da1f2',padding: 15,marginLeft:15,marginRight:15,height: 50}}>
-               <Text style = {styles.submitButtonText}> LOGIN WITH TWITTER </Text>
-              </TouchableHighlight>
             </View>
         </View>
     );
